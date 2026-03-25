@@ -83,16 +83,16 @@ function generarHabitaciones(piso, inicio, fin) {
 
 
 function cerrarSesion(){
-    window.location.href = "pagina.html"
+    window.location.href = "../html/pagina.html"
 }
 
 
 
+function crearOrden(){
+    document.getElementById("seccion").style.display = "flex";
+}
 
+function cerrar(){
+    document.getElementById("seccion").style.display = "none";
+}
 
-
-
-
-window.onload = function () {
-    cargarPisos();
-};

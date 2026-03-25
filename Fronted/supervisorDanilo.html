@@ -88,10 +88,16 @@
                         <label>Fecha</label>
                         <input type="date">
                     </div>
-                    <button type="submit" class="btn">Crear Orden</button>
+                    <button type="submit" class="btn" onchange="crearOrden()">Crear Orden</button>
                 </form>
             </section>
-
+            <div class="seccion">
+                <label> Se creó la orden con éxito</label>
+                <div>
+                    <button class="btn">Cerrar</button>
+                </div>
+            </div>
+            </div>
             <section id="ordenes" class="seccion">
                 <h2>Órdenes</h2>
                     <table>
