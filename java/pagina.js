@@ -5,10 +5,10 @@ function iniciarSesion() {
         window.location.href = "administrador.html";
     }
     else if (correo === "operario@correo.com" && clave === "123") {
-        window.location.href = ".html";
+        window.location.href = "operario.html";
     }
-    else if (correo === "func@correo.com" && clave === "123") {
-        window.location.href = ".html";
+    else if (correo === "sup@correo.com" && clave === "123") {
+        window.location.href = "supervisor.html";
     }
     else {
         alert("Correo o Contraseña incorrecta")

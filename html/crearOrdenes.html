@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/crearOrdenez.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <aside class="columnaIzquierda">
+            <img src="../imagenes/izquierda.jpeg" class="logo">
+            <nav class="menu">
+                <a href="" class="menuLateral">Inicio</a>
+                <a href="../html/crearOrdenes.html" class="menuLateral">Crear órdenes</a>
+                <a href="" class="menuLateral">Órdenes</a>
+                <a href="" class="menuLateral">Usuarios</a>
+                <a href="" class="menuLateral">Reportes</a>
+                <a href="../html/adios.html" class="menuLateral">Cerrar sesión</a>
+            </nav>
+        </aside>
+    </div>
+    <main class="contenido">
+        <div class="linea">
+            <span class="titulo">Administrador</span>
+            <a href="../html/administrador.html" class="perfil">Perfil</a>
+        </div>
+        <div class="contenidoOrdenes">
+            <h2>Crear Orden</h2>
+            <form class="ordenes">
+                <div class="campo">
+                    <label>Número de Orden</label>
+                    <input type="text" placeholder="Ej: 01">
+                </div>
+                <div class="campo">
+                    <label>Técnico asignado</label>
+                    <select>
+                        <option>Seleccione un tecnico</option>
+                        <option>Operario 1</option>
+                        <option>Operario 2</option>
+                        <option>Operario 3</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label>Descripción del problema</label>
+                    <textarea placeholder="Describa el problema encontrado"></textarea>
+                </div>
+                <div class="campo">
+                    <label>Ambiente</label>
+                    <select id="ambiente" onchange="cambiarAmbiente()">
+                        <option value="">Seleccione ambiente</option>
+                        <option value="habitacion">Habitacion</option>
+                        <option value="area_comun">Área común</option>
+                        <option value="oficina">Oficina</option>
+                    </select>
+                </div>
+                <div id="opcionesAmbiente">
+                    <div class="campo">
+                        <label>Piso</label>
+                        <select id="piso" onchange="cargarHabitaciones()"></select>
+                    </div>
+                    <div class="campo">
+                        <label>Habitacion</label>
+                        <select id="habitacion"></select>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label>Prioridad</label>
+                    <select>
+                        <option>Seleccione la prioridad</option>
+                        <option>Alta</option>
+                        <option>Intermedia</option>
+                        <option>Baja</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label>Fecha</label>
+                    <input type="date">
+                </div>
+                <button type="submit" class="botonCrear">Crear orden</button>
+            </form>
+        </div>
+    </main>
+    <script src="../java/administrador.js"></script>
+</body>
+
+</html>

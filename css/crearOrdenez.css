@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.contenedor {
+    width: 200px;
+}
+
+.columnaIzquierda {
+    width: 200px;
+    min-height: 100%;
+    background-color: #0f4d32;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    border-radius: 12%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 25px;
+}
+
+.menu {
+    margin-top: 100px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../imagenes/fondo2.jpeg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.linea {
+    height: 7vw;
+    border-bottom: 5px solid black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: white;
+}
+
+.titulo {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #0f4d32;
+}
+
+.perfil {
+    position: absolute;
+    right: 20px;
+    background-color: #0f4d32;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.menuLateral {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contenidoOrdenes {
+    margin: 15px 40px 30px 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+}
+
+.ordenes {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.campo label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    padding: 10px;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#opcionesAmbiente {
+    display: none;
+}
+
+.botonCrear {
+    width: 180px;
+    padding: 10px;
+    background: #0f4d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
