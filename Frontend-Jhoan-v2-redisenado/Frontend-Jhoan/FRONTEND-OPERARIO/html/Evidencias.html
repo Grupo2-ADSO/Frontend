@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidencias</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../img/logo.jpg" alt="Logo Holiday Inn" class="logo">
+            </div>
+
+
+
+            <nav class="menu">
+                
+        <a href="Proyecto-Electivo.html" data-nav class="nav-link ">Inicio</a>
+        <a href="Ordenes-trabajo.html" data-nav class="nav-link ">Órdenes de trabajo</a>
+        <a href="Evidencias.html" data-nav class="nav-link active">Evidencias</a>
+        <a href="Historial-Operario.html" data-nav class="nav-link ">Historial del operario</a>
+    
+            </nav>
+        </aside>
+
+        <div class="overlay" data-overlay></div>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <button class="menu-toggle" type="button" data-menu-toggle>Menú</button>
+                    <p class="section-label">Gestión</p>
+                    <h1 class="topbar__title">Evidencias</h1>
+                    <p class="topbar__subtitle">Sistema de gestión de operaciones - Holiday Inn</p>
+                </div>
+ <button class="btn btn-secondary" type="button" onclick="mostrarMensaje('Perfil del Operario')">
+                     Perfil
+                 </button>
+            </header>
+
+            <div class="content">
+                
+<section class="page-section fade-in">
+    <div class="section-header">
+        <div>
+            <p class="section-label">Soportes de trabajo</p>
+            <h2>Evidencias</h2>
+        </div>
+    </div>
+
+    <div class="evidence-card">
+        <h3>Registrar evidencia de una orden</h3>
+        <p>
+            Selecciona los archivos que servirán como soporte de la actividad realizada.
+        </p>
+
+        <div class="campo">
+            <label for="orden">Orden de trabajo</label>
+            <select id="orden">
+                <option value="">Seleccione una orden</option>
+                <option value="001">Orden 001 - Habitación 0710</option>
+                <option value="002">Orden 002 - Habitación 0605</option>
+                <option value="003">Orden 003 - Área común</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="archivo">Seleccionar evidencia</label>
+            <input id="archivo" type="file" accept="image/*,.pdf" multiple>
+        </div>
+
+        <div class="evidence-actions">
+            <button class="primary-btn save-evidences" type="button">
+                Guardar evidencias
+            </button>
+            <button class="btn btn-light" type="reset">
+                Limpiar
+            </button>
+        </div>
+    </div>
+</section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

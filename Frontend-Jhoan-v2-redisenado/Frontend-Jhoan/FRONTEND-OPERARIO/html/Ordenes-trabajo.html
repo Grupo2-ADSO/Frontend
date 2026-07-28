@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órdenes de Trabajo</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../img/logo.jpg" alt="Logo Holiday Inn" class="logo">
+            </div>
+
+
+
+            <nav class="menu">
+                
+        <a href="Proyecto-Electivo.html" data-nav class="nav-link ">Inicio</a>
+        <a href="Ordenes-trabajo.html" data-nav class="nav-link active">Órdenes de trabajo</a>
+        <a href="Evidencias.html" data-nav class="nav-link ">Evidencias</a>
+        <a href="Historial-Operario.html" data-nav class="nav-link ">Historial del operario</a>
+    
+            </nav>
+        </aside>
+
+        <div class="overlay" data-overlay></div>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <button class="menu-toggle" type="button" data-menu-toggle>Menú</button>
+                    <p class="section-label">Gestión</p>
+                    <h1 class="topbar__title">Órdenes de trabajo</h1>
+                    <p class="topbar__subtitle">Sistema de gestión de operaciones - Holiday Inn</p>
+                </div>
+ <button class="btn btn-secondary" type="button" onclick="mostrarMensaje('Perfil del Operario')">
+                     Perfil
+                 </button>
+            </header>
+
+            <div class="content">
+                
+<section class="page-section fade-in">
+    <div class="section-header">
+        <div>
+            <p class="section-label">Mantenimiento</p>
+            <h2>Órdenes de trabajo</h2>
+        </div>
+        <input
+            type="search"
+            class="search-input"
+            data-filter="#tablaOrdenes"
+            placeholder="Buscar una orden..."
+        >
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>No. Orden</th>
+                    <th>Actividad</th>
+                    <th>Área</th>
+                    <th>Prioridad</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaOrdenes">
+                <tr>
+                    <td>001</td>
+                    <td>Revisión de televisor</td>
+                    <td>Habitación 0710</td>
+                    <td><span class="badge badge-high">Alta</span></td>
+                    <td><span class="badge badge-medium">En proceso</span></td>
+                    <td>01/02/2026</td>
+                </tr>
+
+                <tr>
+                    <td>002</td>
+                    <td>Revisión de baño</td>
+                    <td>Habitación 0605</td>
+                    <td><span class="badge badge-medium">Media</span></td>
+                    <td><span class="badge badge-low">Finalizada</span></td>
+                    <td>02/02/2026</td>
+                </tr>
+
+                <tr>
+                    <td>003</td>
+                    <td>Mantenimiento preventivo</td>
+                    <td>Área común</td>
+                    <td><span class="badge badge-low">Baja</span></td>
+                    <td><span class="badge badge-medium">Pendiente</span></td>
+                    <td>05/02/2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

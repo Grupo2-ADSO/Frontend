@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial del Operario</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../img/logo.jpg" alt="Logo Holiday Inn" class="logo">
+            </div>
+
+
+            <nav class="menu">
+                
+        <a href="Proyecto-Electivo.html" data-nav class="nav-link ">Inicio</a>
+        <a href="Ordenes-trabajo.html" data-nav class="nav-link ">Órdenes de trabajo</a>
+        <a href="Evidencias.html" data-nav class="nav-link ">Evidencias</a>
+        <a href="Historial-Operario.html" data-nav class="nav-link active">Historial del operario</a>
+    
+            </nav>
+        </aside>
+
+        <div class="overlay" data-overlay></div>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <button class="menu-toggle" type="button" data-menu-toggle>Menú</button>
+                    <p class="section-label">Seguimiento</p>
+                    <h1 class="topbar__title">Historial del operario</h1>
+                    <p class="topbar__subtitle">Sistema de gestión de operaciones - Holiday Inn</p>
+                </div>
+
+ <button class="btn btn-secondary" type="button" onclick="mostrarMensaje('Perfil del Operario')">
+                     Perfil
+                 </button>
+            </header>
+
+            <div class="content">
+                
+<section class="page-section fade-in">
+    <div class="section-header">
+        <div>
+            <p class="section-label">Seguimiento</p>
+            <h2>Historial del operario</h2>
+        </div>
+
+        <input
+            type="search"
+            class="search-input"
+            data-filter="#tablaHistorial"
+            placeholder="Buscar en el historial..."
+        >
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Orden</th>
+                    <th>Área</th>
+                    <th>Actividad</th>
+                    <th>Estado</th>
+                    <th>Observación</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaHistorial">
+                <tr>
+                    <td>01/02/2026</td>
+                    <td>001</td>
+                    <td>Habitación 0710</td>
+                    <td>Revisión de televisor</td>
+                    <td><span class="badge badge-low">Finalizada</span></td>
+                    <td>Trabajo realizado correctamente.</td>
+                </tr>
+
+                <tr>
+                    <td>02/02/2026</td>
+                    <td>002</td>
+                    <td>Habitación 0605</td>
+                    <td>Revisión de baño</td>
+                    <td><span class="badge badge-low">Finalizada</span></td>
+                    <td>Se solucionó el inconveniente reportado.</td>
+                </tr>
+
+                <tr>
+                    <td>05/02/2026</td>
+                    <td>003</td>
+                    <td>Área común</td>
+                    <td>Mantenimiento preventivo</td>
+                    <td><span class="badge badge-medium">En proceso</span></td>
+                    <td>Actividad pendiente de verificación.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

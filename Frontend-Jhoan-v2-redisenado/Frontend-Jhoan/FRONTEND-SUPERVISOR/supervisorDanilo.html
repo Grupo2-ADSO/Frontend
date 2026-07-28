@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Supervisor</title>
+    <link rel="stylesheet" href="supervisorDanilo.css">
+</head>
+
+<body>
+    <div class="layout">
+
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="IMAGENES/imagen1.jpg.jpeg" alt="Logo del sistema" class="logo">
+            </div>
+
+            <nav class="menu">
+                <button class="menu-item active" onclick="mostrarSeccion('inicio', this)">Inicio</button>
+                <button class="menu-item" onclick="mostrarSeccion('crear', this)">Crear orden</button>
+                <button class="menu-item" onclick="mostrarSeccion('ordenes', this)">Órdenes</button>
+                <button class="menu-item" onclick="mostrarSeccion('tecnicos', this)">Técnicos</button>
+                <button class="menu-item" onclick="mostrarSeccion('reportes', this)">Reportes</button>
+                <button class="menu-item" onclick="cerrarSesion()">Cerrar sesión</button>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="topbar-label">Panel de gestión</p>
+                    <h1>Supervisor</h1>
+                </div>
+                <button class="btn btn-secondary" type="button" onclick="mostrarMensaje('Perfil del supervisor')">
+                    Perfil
+                </button>
+            </header>
+
+            <div class="content-wrapper">
+
+                <!-- Inicio -->
+                <section id="inicio" class="seccion activa">
+                    <div class="welcome-card">
+                        <p class="section-label">Panel principal</p>
+                        <h2>¿Qué piensas hacer hoy?</h2>
+                        <p>Administra las órdenes de trabajo, consulta los técnicos y revisa los reportes del hotel.</p>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <article class="info-card">
+                            <span class="card-number">01</span>
+                            <h3>Órdenes registradas</h3>
+                            <p>Consulta las órdenes de trabajo creadas.</p>
+                        </article>
+
+                        <article class="info-card">
+                            <span class="card-number">02</span>
+                            <h3>Técnicos</h3>
+                            <p>Revisa los técnicos disponibles en el sistema.</p>
+                        </article>
+
+                        <article class="info-card">
+                            <span class="card-number">03</span>
+                            <h3>Reportes</h3>
+                            <p>Consulta el historial de trabajos realizados.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Crear orden -->
+                <section id="crear" class="seccion">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-label">Gestión</p>
+                            <h2>Crear orden de trabajo</h2>
+                        </div>
+                    </div>
+
+                    <form id="formOrden" class="form-card">
+                        <div class="form-grid">
+                            <div class="campo">
+                                <label for="numeroOrden">Número de orden</label>
+                                <input id="numeroOrden" type="text" placeholder="Ej: 001" required>
+                            </div>
+
+                            <div class="campo">
+                                <label for="tecnico">Técnico asignado</label>
+                                <select id="tecnico" required>
+                                    <option value="">Seleccione un técnico</option>
+                                    <option value="Operario 1">Operario 1</option>
+                                    <option value="Operario 2">Operario 2</option>
+                                    <option value="Operario 3">Operario 3</option>
+                                </select>
+                            </div>
+
+                            <div class="campo campo-completo">
+                                <label for="descripcion">Descripción del problema</label>
+                                <textarea id="descripcion" rows="4" placeholder="Ej: Problema en la habitación..." required></textarea>
+                            </div>
+
+                            <div class="campo">
+                                <label for="ambiente">Ambiente</label>
+                                <select id="ambiente" required>
+                                    <option value="">Seleccione un ambiente</option>
+                                    <option value="habitacion">Habitación</option>
+                                    <option value="area_comun">Área común</option>
+                                </select>
+                            </div>
+
+                            <div id="opcionesHabitacion" class="campo oculto">
+                                <label for="piso">Piso</label>
+                                <select id="piso">
+                                    <option value="">Seleccione un piso</option>
+                                </select>
+                            </div>
+
+                            <div id="campoHabitacion" class="campo oculto">
+                                <label for="habitacion">Habitación</label>
+                                <select id="habitacion">
+                                    <option value="">Seleccione una habitación</option>
+                                </select>
+                            </div>
+
+                            <div class="campo">
+                                <label for="prioridad">Prioridad</label>
+                                <select id="prioridad" required>
+                                    <option value="">Seleccione la prioridad</option>
+                                    <option value="Alta">Alta</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Baja">Baja</option>
+                                </select>
+                            </div>
+
+                            <div class="campo">
+                                <label for="fecha">Fecha</label>
+                                <input id="fecha" type="date" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Crear orden</button>
+                            <button type="reset" class="btn btn-light">Limpiar</button>
+                        </div>
+                    </form>
+
+                    <div id="mensajeOrden" class="success-message oculto">
+                        <strong>Orden creada correctamente.</strong>
+                        <span>La información fue validada y está lista para ser registrada.</span>
+                    </div>
+                </section>
+
+                <!-- Órdenes -->
+                <section id="ordenes" class="seccion">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-label">Gestión de mantenimiento</p>
+                            <h2>Órdenes de trabajo</h2>
+                        </div>
+                        <input id="buscarOrden" class="search-input" type="search" placeholder="Buscar orden...">
+                    </div>
+
+                    <div class="table-card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>No. Orden</th>
+                                    <th>Técnico asignado</th>
+                                    <th>Prioridad</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaOrdenes">
+                                <tr>
+                                    <td>001</td>
+                                    <td>Operario 1</td>
+                                    <td><span class="badge badge-high">Alta</span></td>
+                                    <td>Hab. 0710 no funciona el televisor</td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>Operario 2</td>
+                                    <td><span class="badge badge-medium">Media</span></td>
+                                    <td>Hab. 0605 tiene el baño tapado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Técnicos -->
+                <section id="tecnicos" class="seccion">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-label">Personal</p>
+                            <h2>Técnicos</h2>
+                        </div>
+                    </div>
+
+                    <div class="table-card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Historial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>001</td>
+                                    <td>Operario 1</td>
+                                    <td><button class="btn btn-small" type="button" onclick="mostrarMensaje('Historial de Operario 1')">Ver</button></td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>Operario 2</td>
+                                    <td><button class="btn btn-small" type="button" onclick="mostrarMensaje('Historial de Operario 2')">Ver</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Reportes -->
+                <section id="reportes" class="seccion">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-label">Seguimiento</p>
+                            <h2>Reportes</h2>
+                        </div>
+                    </div>
+
+                    <div class="table-card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Operario</th>
+                                    <th>Prioridad</th>
+                                    <th>Ambiente</th>
+                                    <th>Observaciones</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01/02/2026</td>
+                                    <td>Operario 1</td>
+                                    <td><span class="badge badge-medium">Media</span></td>
+                                    <td>Hab. 0605</td>
+                                    <td>Se realizó el trabajo con éxito.</td>
+                                    <td><button class="btn btn-small" type="button" onclick="mostrarMensaje('Reporte del 01/02/2026')">Ver</button></td>
+                                </tr>
+                                <tr>
+                                    <td>05/02/2026</td>
+                                    <td>Operario 2</td>
+                                    <td><span class="badge badge-high">Alta</span></td>
+                                    <td>Lobby</td>
+                                    <td>El trabajo se realizó correctamente y se hicieron correcciones adicionales.</td>
+                                    <td><button class="btn btn-small" type="button" onclick="mostrarMensaje('Reporte del 05/02/2026')">Ver</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="notificacion" class="notification"></div>
+
+    <script src="supervisorDanilo.js"></script>
+</body>
+</html>
